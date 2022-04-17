@@ -6,7 +6,9 @@ from Discriminator import Discriminator
 from target_lstm import TARGET_LSTM
 from target_lstm20 import TARGET_LSTM20
 from LeakGANModel import  LeakGAN
-import cPickle
+#######################################################
+import _pickle as cPickle
+#import cPickle
 import os
 
 
