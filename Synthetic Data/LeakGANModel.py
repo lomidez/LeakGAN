@@ -157,7 +157,8 @@ class LeakGAN(object):
 
         self.gen_o_worker_array = tf.transpose(self.gen_o_worker_array, perm=[1, 0,2,3])  # batch_size x seq_length * vocab*goal
 
-        sub_feature = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length/self.step_size,
+        ####################################################################################################################
+        sub_feature = tensor_array_ops.TensorArray(dtype=tf.float32, size=int(self.sequence_length/self.step_size),
                                                        dynamic_size=False, infer_shape=True, clear_after_read=False)
 
         all_sub_features = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length,
