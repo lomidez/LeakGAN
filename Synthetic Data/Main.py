@@ -25,7 +25,9 @@ flags.DEFINE_string('model', "", 'Model NAME')
 ######################################################################################
 EMB_DIM = 32 # embedding dimension
 HIDDEN_DIM = 32 # hidden state dimension of lstm cell
-SEQ_LENGTH = FLAGS.length # sequence length
+########################################################
+#SEQ_LENGTH = FLAGS.length # sequence length
+SEQ_LENGTH = 10 # sequence length
 START_TOKEN = 0
 PRE_EPOCH_NUM = 80 # supervise (maximum likelihood estimation) epochs
 SEED = 88
