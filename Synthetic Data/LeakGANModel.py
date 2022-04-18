@@ -94,8 +94,9 @@ class LeakGAN(object):
 
         gen_real_goal_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length,
                                                        dynamic_size=False, infer_shape=True, clear_after_read=False)
-
-        gen_o_worker_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length/self.step_size,
+        
+        ####################################################################################################################
+        gen_o_worker_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=int(self.sequence_length/self.step_size),
                                                        dynamic_size=False, infer_shape=True, clear_after_read=False)
 
         def _g_recurrence(i, x_t,h_tm1,h_tm1_manager, gen_o, gen_x,goal,last_goal,real_goal,step_size,gen_real_goal_array,gen_o_worker_array):
