@@ -88,7 +88,8 @@ class LeakGAN(object):
 
         feature_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length+1,
                                                      dynamic_size=False, infer_shape=True, clear_after_read=False)
-        real_goal_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length/self.step_size,
+        ####################################################################################################################
+        real_goal_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=int(self.sequence_length/self.step_size),
                                                        dynamic_size=False, infer_shape=True, clear_after_read=False)
 
         gen_real_goal_array = tensor_array_ops.TensorArray(dtype=tf.float32, size=self.sequence_length,
